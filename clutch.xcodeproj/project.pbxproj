@@ -10,6 +10,9 @@
 		AD8632E616DDEF7F00645542 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8632E516DDEF7F00645542 /* Foundation.framework */; };
 		AD8632E916DDEF7F00645542 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8632E816DDEF7F00645542 /* main.m */; };
 		AD8632ED16DDEF7F00645542 /* clutch.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD8632EC16DDEF7F00645542 /* clutch.1 */; };
+		AD8632F416DDF08500645542 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8632F316DDF08500645542 /* IOKit.framework */; };
+		AD8632F616DDF36E00645542 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8632F516DDF36E00645542 /* ApplicationServices.framework */; };
+		AD8632FA16DDFE6200645542 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8632F916DDFE6200645542 /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +34,9 @@
 		AD8632E816DDEF7F00645542 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD8632EB16DDEF7F00645542 /* clutch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "clutch-Prefix.pch"; sourceTree = "<group>"; };
 		AD8632EC16DDEF7F00645542 /* clutch.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = clutch.1; sourceTree = "<group>"; };
+		AD8632F316DDF08500645542 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ../../../../System/Library/Frameworks/IOKit.framework; sourceTree = "<group>"; };
+		AD8632F516DDF36E00645542 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = ../../../../System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<group>"; };
+		AD8632F916DDFE6200645542 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = ../../../../System/Library/Frameworks/Carbon.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8632E616DDEF7F00645542 /* Foundation.framework in Frameworks */,
+				AD8632F416DDF08500645542 /* IOKit.framework in Frameworks */,
+				AD8632F616DDF36E00645542 /* ApplicationServices.framework in Frameworks */,
+				AD8632FA16DDFE6200645542 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,9 @@
 		AD8632E416DDEF7F00645542 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD8632F916DDFE6200645542 /* Carbon.framework */,
+				AD8632F516DDF36E00645542 /* ApplicationServices.framework */,
+				AD8632F316DDF08500645542 /* IOKit.framework */,
 				AD8632E516DDEF7F00645542 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -175,7 +187,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -201,13 +213,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
 		AD8632F116DDEF7F00645542 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Versions/A/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "clutch/clutch-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -217,6 +233,10 @@
 		AD8632F216DDEF7F00645542 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Versions/A/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "clutch/clutch-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -242,6 +262,7 @@
 				AD8632F216DDEF7F00645542 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
